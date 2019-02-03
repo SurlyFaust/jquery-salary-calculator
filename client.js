@@ -1,6 +1,17 @@
 $(document).ready(onReady);
 
+class Employee {
+    constructor(firstName, lastName, idNumber, title, annualSalary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.idNumber = idNumber;
+        this.title = title;
+        this.annualSalary = annualSalary;
+    }
+}
+
 let totalSalaries = 0;
+let allEmployees = [];
 
 function isEmpty(str) {
     return !str.replace(/\s+/, '').length;
@@ -8,7 +19,7 @@ function isEmpty(str) {
 
 function onReady() {
     $('#submitButton').on('click', submitButton);
-    $('#employeeTable').on('click', '#deleteButton', deleteEmployeeButton);
+    $('#employeeTable').on('click', '.deleteButton', deleteEmployeeButton);
 };
 
 function submitButton() {
@@ -20,11 +31,11 @@ function submitButton() {
     } else {
         $('#totalMonthly').css('background-color', 'white');
     }
-    $('input').val('');
+    allEmployees.push(new Employee($('#firstName').val(), $('#lastName').val(), $('#idNumber').val(), $('#title').val(), $('#annualSalary').val()));
+    $('.employeeInput').val('');
 }
 
 function deleteEmployeeButton() {
-    console.log('Wokring');
     
-    // $(this).closest('tr').remove()
+    $(this).closest('tr').remove();
 }
