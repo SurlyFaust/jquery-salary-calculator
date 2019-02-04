@@ -1,0 +1,17 @@
+table, th, td {
+    border: 1px solid black;
+    width: 800px;
+  }
+  th {
+      text-align: left;
+  }
+  #header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100px;
+      background-color: aquamarine;
+      font-size: 40px;
+  }
+  
