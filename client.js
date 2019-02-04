@@ -36,9 +36,5 @@ function submitButton() {
 }
 
 function deleteEmployeeButton() {
-    console.log(Number($(this).closest('tr.salary').text()));
-    
-    // totalSalaries -= Number($(this.salary).text());
-    // $('#totalMonthly').text('Total Monthly: $' + Number((totalSalaries/12).toFixed(2)));
     $(this).closest('tr').remove();
 }
